@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/sahyam2019/oub-remix.svg?branch=sql-extended)](https://travis-ci.com/sahyam2019/oub-remix)
-# Project OpenUserBot Remix
+# Project OpenUserBot Remix, Thank You Sahyam 🥳
 
-![logo](https://telegra.ph/file/12fd39f968f0892ae1a7e.jpg)
+![logo](https://telegra.ph/file/00897a31955863691f379.jpg)
 
 ```
 #include <std/disclaimer.h>
