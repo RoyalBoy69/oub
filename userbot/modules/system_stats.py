@@ -127,7 +127,7 @@ async def pipcheck(pip):
         else:
             await pip.edit("`Use .help system to see an example`")
 
-@register(outgoing=True, pattern="^.start$")
+@register(outgoing=True, pattern="^.offline$")
 async def amireallyalive(alive):
     """ For .start command, check if the bot is running.  """
     logo = ALIVE_LOGO
@@ -176,7 +176,7 @@ CMD_HELP.update({
 \n\n`.pip` <module(s)>\
 \nUsage: Does a search of pip modules(s).\
 \n\n`.start`\
-\nUsage: Type .start to see whether your bot is working or not.\
+\nUsage: Type .offline to see whether your bot is working or not.\
 \n\n`.aliveu` <text>\
 \nUsage: Changes the 'user' in alive to the text you want.\
 \n\n`.resetalive`\
