@@ -23,7 +23,10 @@ from os import remove
 from telethon import version
 
 from userbot import CMD_HELP, ALIVE_NAME, BOT_VER, UPSTREAM_REPO_BRANCH, ALIVE_LOGO, bot
+<<<<<<< HEAD
 
+=======
+>>>>>>> ca74be0a097fbb95608e35ea10fe7c23a440cf6a
 from userbot.events import register
 
 # ================= CONSTANT =================
@@ -227,6 +230,22 @@ async def pipcheck(pip):
 @register(outgoing=True, pattern="^.start$")
 
 async def amireallyalive(alive):
+<<<<<<< HEAD
+=======
+    """ For .start command, check if the bot is running.  """
+    logo = ALIVE_LOGO
+    output = (f"`🤖 STATUS: Remix is running ✅`\n"
+             f"`Telethon version`: {version.__version__} \n"
+             f"`Python version🐍`: {python_version()} \n"
+             f"`Bot Version🤘: Remix {BOT_VER}` \n"
+             f"==================================== \n"
+             f"User 👨‍🚀: {DEFAULTUSER} \n"
+             f"Maintainer 🏄‍♂️: @heyworld \n"
+             f"====================================\n")
+    await bot.send_file(alive.chat_id, logo, caption=output)
+    await alive.delete()
+                         
+>>>>>>> ca74be0a097fbb95608e35ea10fe7c23a440cf6a
 
     """ For .start command, check if the bot is running.  """
 
