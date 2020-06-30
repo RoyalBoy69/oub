@@ -232,21 +232,16 @@ async def amireallyalive(alive):
 
     logo = ALIVE_LOGO
 
-    output = (f"🤖𝔸ℙ𝕌ℕ 𝕀𝔻ℍ𝔸ℝ𝕀ℂℍ ℍ𝔸𝕀🤖 \n"
-
-             f"♥️тєℓєтнση νєяѕιση: {version.__version__} \n"
-
-             f"🐍ρутнση νєяѕιση: {python_version()} \n" 
-
-             f"🤘вσт νєяѕιση: Remix {BOT_VER} \n" 
-
-             f"==================================== \n"
-
-             f"👦🏻υѕєя: {DEFAULTUSER} \n"
-
-             f"⚙️мαιηтαιηєя: [𝓐𝓫𝓱𝓲𝓷𝓪𝓿 𝓢𝓱𝓲𝓷𝓭𝓮](t.me/AbhinavShinde) \n"
-
-             f"==================================== \n")
+    output = ("E.D.I.T.H. is online. \n"
+              " \n"
+              f"Telethon version: {version.__version__} \n"
+              f"Python: {python_version()} \n"
+              " \n"
+              f"Owner: [ℜøℽⱥl ẞøℽ ꧁やℜiℽⱥήshu꧂](t.me/RoyalBoyPriyanshu) \n"
+              " \n"
+              f"ℜøℽⱥl'z Bot: E.D.I.T.H. \n"
+              f"Even Dead, I'm The Hero! 😎 "
+              "`")
 
     await bot.send_file(alive.chat_id, logo, caption=output)
 
