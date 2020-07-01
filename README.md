@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 [![Build Status](https://travis-ci.com/sahyam2019/oub-remix.svg?branch=sql-extended)](https://travis-ci.com/sahyam2019/oub-remix)
 # Project OpenUserBot Remix, Thank You Sahyam 🥳
+=======
+[![Build Status](https://travis-ci.com/sahyam2019/oub-remix.svg?branch=sql-extended)](https://travis-ci.com/sahyam2019/oub-remix) ![Last Commit](https://img.shields.io/github/last-commit/sahyam2019/oub-remix) ![Contributers](https://img.shields.io/github/contributors/sahyam2019/oub-remix) ![Forks](https://img.shields.io/github/forks/sahyam2019/oub-remix)     
+# Project OpenUserBot Remix
+>>>>>>> c231ce3063cd8ddfa05cb603e8068ab41efad009
 
 ![logo](https://telegra.ph/file/00897a31955863691f379.jpg)
 
