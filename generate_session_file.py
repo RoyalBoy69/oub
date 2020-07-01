@@ -11,8 +11,8 @@ import os
 
 load_dotenv("config.env")
 
-API_KEY = os.environ.get("API_KEY", None)
-API_HASH = os.environ.get("API_HASH", None)
+API_KEY = os.environ.get("1258088", None)
+API_HASH = os.environ.get("f347197a7883a08674ff1e10011538d7", None)
 
 bot = TelegramClient('userbot', API_KEY, API_HASH)
 bot.start()
