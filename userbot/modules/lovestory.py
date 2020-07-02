@@ -1,5 +1,11 @@
 """COMMAND : .lovestory"""
-#from userbot.utils import admin_cmd
+import random, re
+#from uniborg.util import admin_cmd
+import asyncio
+from telethon import events
+from userbot.events import register
+from asyncio import sleep
+import time
 
 @register(pattern="lovestory")
 
