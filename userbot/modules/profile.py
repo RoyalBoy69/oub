@@ -293,7 +293,6 @@ async def fetch_info(replied_user, event):
     user_bio = "This User has no About" if not user_bio else user_bio
 
     caption = "<b>USER INFO:</b>\n\n"
-<<<<<<< HEAD
     caption += f"👨🏻First Name: {first_name}\n"
     caption += f"👨🏻Last Name: {last_name}\n"
     caption += f"👤Username: {username}\n"
@@ -307,7 +306,6 @@ async def fetch_info(replied_user, event):
     caption += f"🧾Common Chats with this user: {common_chat}\n"
     caption += f"🔗Permanent Link To Profile: "
     caption += f"👩‍💻<a href=\"tg://user?id={user_id}\">{first_name}</a>"
-=======
     caption += f"First Name: {first_name}\n"
     caption += f"Last Name: {last_name}\n"
     caption += f"Username: {username}\n"
@@ -321,7 +319,6 @@ async def fetch_info(replied_user, event):
     caption += f"Common Chats with this user: {common_chat}\n"
     caption += "Permanent Link To Profile: "
     caption += f"<a href=\"tg://user?id={user_id}\">{first_name}</a>"
->>>>>>> 0fb9df68adc4b7a22e089bc0266c66a8c2d97e52
 
     return photo, caption
 
