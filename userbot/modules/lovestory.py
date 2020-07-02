@@ -7,7 +7,7 @@ from userbot.events import register
 from asyncio import sleep
 import time
 
-@register(pattern="lovestory")
+@register(pattern=".lovestory")
 
 async def _(event):
 
