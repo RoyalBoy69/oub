@@ -8,7 +8,7 @@ from userbot.utils import admin_cmd
 
 
 
-@register(pattern="lovestory"))
+@register(pattern="lovestory")
 
 async def _(event):
 
