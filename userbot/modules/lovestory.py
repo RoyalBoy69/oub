@@ -1,6 +1,5 @@
 """COMMAND : .lovestory"""
-
-
+#from userbot.utils import admin_cmd
 
 @register(pattern="lovestory")
 
