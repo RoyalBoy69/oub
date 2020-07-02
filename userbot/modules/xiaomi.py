@@ -1,9 +1,7 @@
 #created by @eve_enryu
 
-import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot import bot, CMD_HELP
 from userbot.events import register
 
@@ -13,7 +11,7 @@ async def _(event):
         return
     link = event.pattern_match.group(1)
     chat = "@XiaomiGeeksBot"
-    firmware = f"firmware"
+    firmware = "firmware"
     await event.edit("```Processing```")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
           try:
@@ -34,7 +32,7 @@ async def _(event):
         return
     link = event.pattern_match.group(1)
     chat = "@XiaomiGeeksBot"
-    mieu = f"eu"
+    mieu = "eu"
     await event.edit("```Processing```")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
           try:
@@ -55,7 +53,7 @@ async def _(event):
         return
     link = event.pattern_match.group(1)
     chat = "@XiaomiGeeksBot"
-    fboot = f"fastboot"
+    fboot = "fastboot"
     await event.edit("```Processing```")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
           try:
@@ -76,7 +74,7 @@ async def _(event):
         return
     link = event.pattern_match.group(1)
     chat = "@XiaomiGeeksBot"
-    recovery = f"recovery"
+    recovery = "recovery"
     await event.edit("```Processing```")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
           try:
@@ -96,7 +94,7 @@ async def _(event):
         return
     link = event.pattern_match.group(1)
     chat = "@XiaomiGeeksBot"
-    pitch = f"pb"
+    pitch = "pb"
     await event.edit("```Processing```")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
           try:
@@ -116,7 +114,7 @@ async def _(event):
         return
     link = event.pattern_match.group(1)
     chat = "@XiaomiGeeksBot"
-    ofox = f"of"
+    ofox = "of"
     await event.edit("```Processing```")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
           try:
