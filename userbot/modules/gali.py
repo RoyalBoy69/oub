@@ -7,7 +7,7 @@ from userbot.events import register
 from asyncio import sleep
 import time
 
-@bot.on(events.NewMessage(pattern=r"\.abuse(.*)", outgoing=True))
+@register(events.NewMessage(pattern=r"\.abuse(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
