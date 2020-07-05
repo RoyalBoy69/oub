@@ -292,7 +292,7 @@ async def fetch_info(replied_user, event):
         "This User has no Username")
     user_bio = "This User has no About" if not user_bio else user_bio
 
-    ccaptionaption = "<b>USER INFO:</b>\n\n"
+    caption = "<b>USER INFO:</b>\n\n"
     caption += f"👨🏻First Name: {first_name}\n"
     caption += f"👨🏻Last Name: {last_name}\n"
     caption += f"👤Username: {username}\n"
