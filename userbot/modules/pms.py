@@ -31,7 +31,7 @@ UNAPPROVED_MSG = (
     "`My master haven't approved you to PM yet.`"
     "`Please wait for my master to look in, He mostly approve PMs unless you are retarded.\n\n`"
     "`Until then, please don't spam his PM. Spamming you'll automatically get blocked & reported!! \n\n`"
-    "`NOTE: If you send more than two messages, you will get report as spam + block.`")
+    "`NOTE: If you send more than five messages, you will get report as spam + block.`")
 # =================================================================
 
 NO_PM_LOG_USERS = []
