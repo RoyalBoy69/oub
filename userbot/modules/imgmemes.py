@@ -7,7 +7,7 @@ from userbot.events import register
 from asyncio import sleep
 import time
 
-@register.on(admin_cmd(outgoing=True, pattern=".trump(?: |$)(.*)"))
+egister(pattern="^.trump(?: |$)(.*)", outgoing=True)
 async def nekobot(cat):
     text = cat.pattern_match.group(1)
     reply_to_id = cat.message
@@ -34,7 +34,7 @@ async def nekobot(cat):
     await register.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete()
     
-@register.on(admin_cmd(outgoing=True, pattern=".modi(?: |$)(.*)"))
+@register(pattern="^.modi(?: |$)(.*)", outgoing=True)
 async def nekobot(cat):
     text = cat.pattern_match.group(1)
     reply_to_id = cat.message
@@ -61,7 +61,7 @@ async def nekobot(cat):
     await register.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete() 
     
-@register.on(admin_cmd(outgoing=True, pattern=".cmm(?: |$)(.*)"))
+@register(pattern="^.cmm(?: |$)(.*)", outgoing=True)
 async def nekobot(cat):
     text = cat.pattern_match.group(1)
     reply_to_id = cat.message
@@ -88,7 +88,7 @@ async def nekobot(cat):
     await register.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete()
     
-@register.on(admin_cmd(outgoing=True, pattern=".kanna(?: |$)(.*)"))
+@register(pattern="^.kanna(?: |$)(.*)", outgoing=True)
 async def nekobot(cat):
     text = cat.pattern_match.group(1)
     reply_to_id = cat.message
