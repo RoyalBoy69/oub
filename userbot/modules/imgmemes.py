@@ -1,4 +1,4 @@
-#ported by @RoyalBoyPriyanshu and @DeletedUser420
+#imported from catuserbot by @RoyalBoyPriyanshu and @DeletedUser420 also thank @AbhinavShinde
 import random, re
 #from uniregister.util import admin_cmd
 import asyncio
