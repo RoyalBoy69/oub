@@ -1,7 +1,7 @@
 #imported from catuserbot by @RoyalBoyPriyanshu and @DeletedUser420 also thank @AbhinavShinde
 import random
 from random import choice
-#from uniregister.util import admin_cmd
+#from unicat.client.util import admin_cmd
 import asyncio
 from asyncio import sleep
 from telethon import events
@@ -125,7 +125,7 @@ async def nekobot(cat):
         pass   
     text = deEmojify(text)
     catfile = await trumptweet(text)
-    await register.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
+    await cat.client.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete()
     
 @register(pattern="^.modi(?: |$)(.*)", outgoing=True)
@@ -152,7 +152,7 @@ async def nekobot(cat):
         pass   
     text = deEmojify(text)
     catfile = await moditweet(text)
-    await register.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
+    await cat.client.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete() 
     
 @register(pattern="^.cmm(?: |$)(.*)", outgoing=True)
@@ -179,7 +179,7 @@ async def nekobot(cat):
         pass   
     text = deEmojify(text)
     catfile = await changemymind(text)
-    await register.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
+    await cat.client.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete()
     
 @register(pattern="^.kanna(?: |$)(.*)", outgoing=True)
@@ -206,5 +206,5 @@ async def nekobot(cat):
         pass   
     text = deEmojify(text)
     catfile = await kannagen(text)
-    await register.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
+    await cat.client.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete()
