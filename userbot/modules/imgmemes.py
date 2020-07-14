@@ -7,7 +7,7 @@ from userbot.events import register
 from asyncio import sleep
 import time
 
-egister(pattern="^.trump(?: |$)(.*)", outgoing=True)
+@register(pattern="^.trump(?: |$)(.*)", outgoing=True)
 async def nekobot(cat):
     text = cat.pattern_match.group(1)
     reply_to_id = cat.message
