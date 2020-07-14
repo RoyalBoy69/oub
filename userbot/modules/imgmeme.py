@@ -208,13 +208,15 @@ async def nekobot(cat):
     catfile = await kannagen(text)
     await cat.client.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete()
-
-    CMD_HELP.update({
-
-        "covid": 
-
-        ".covid <country>"
-
-        "\nUsage: Get an information about data covid-19 in your country.\n"
-
-    })
+    
+CMD_HELP.update({
+"imgmeme":
+"Fun purpose 😛😛😏😏\
+\n\n`.modi` (text)\
+     \nUsage : Tweet with modi\
+\n\n`.trump` (text)\
+     \nUsage : Tweet with trump\
+\n\n`.cmm` (text)\
+     \nUsage : Get a banner\
+\n\n`.kanna` (text)\
+     \nUsage : Kanna write for you)}   
