@@ -219,5 +219,4 @@ CMD_HELP.update({
 \n\n`.cmm` (text)\
      \nUsage : Get a banner\
 \n\n`.kanna` (text)\
-     \nUsage : Kanna write for you
-)}   
+     \nUsage : Kanna write for you")}   
