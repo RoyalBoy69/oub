@@ -212,7 +212,7 @@ async def nekobot(cat):
     
 CMD_HELP.update({
 "imgmeme":
-"Fun purpose 😛😛😏😏\
+"For fun purpose 😛😛😏😏\
 \n\n`.modi` (text)\
      \nUsage : Tweet with modi\
 \n\n`.trump` (text)\
