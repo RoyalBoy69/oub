@@ -208,3 +208,13 @@ async def nekobot(cat):
     catfile = await kannagen(text)
     await cat.client.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete()
+
+    CMD_HELP.update({
+
+        "covid": 
+
+        ".covid <country>"
+
+        "\nUsage: Get an information about data covid-19 in your country.\n"
+
+    })
