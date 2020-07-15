@@ -1,4 +1,4 @@
-#imported from uniborg by @RoaylBoyPrianshu
+#imported from uniborg by @RoaylBoyPriyanshu
 """COMMAND : .lovestory"""
 import random, re
 #from uniborg.util import admin_cmd
