@@ -4,7 +4,7 @@ from covid import Covid
 from userbot import CMD_HELP
 from userbot.events import register
 
-@register(outgoing=True, pattern="^.cov (.*)"
+@register(outgoing=True, pattern="^.cov(.*)"
 async def covid(message: Message):
     def fill(nw_c, nw_d, ac_c, cr_c, t_c, t_d, t_r, name, rank):
         output_l = f'''
