@@ -136,7 +136,7 @@ async def amireallyalive(alive):
               f"Telethon version: {version.__version__} \n"
               f"Python: {python_version()} \n"
               " \n"
-              f"Maalik: 𝓜𝓪𝓯𝓲𝓪¥𝓒𝓻𝓪𝔃𝔂 \n"
+              f"Owner: [ℜøℽⱥl ẞøℽ ꧁やℜiℽⱥήshu꧂](t.me/RoyalBoyPriyanshu)\n"
               " \n"
               f"ℜøℽⱥl'z Bot: E.D.I.T.H. \n"
               f"Even Dead, I'm The Hero! 😎 "
