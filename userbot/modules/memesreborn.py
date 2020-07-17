@@ -313,7 +313,7 @@ CMD_HELP.update({
     "memesreborn":
     "`.fukk`\
 \nUsage: Greet Ebri Nibba in da house.\
-\n\n`.rape``.thanos``.chu``.abuse``.abusehard``.gtfo``.upro``.nikal``.iwi``.loop`\
+\n\n`.rape` `.thanos` `.chu` `.abuse` `.abusehard` `.gtfo` `.upro` `.nikal` `.iwi` `.loop`\
 \nUsage: See it yourself nibba🌚."})
 
 
