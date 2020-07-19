@@ -432,9 +432,9 @@ async def hehehe(event):
 CMD_HELP.update({
     "pm":
     "\
-`.approve`\
+`.apm`\
 \nUsage: Approves the mentioned/replied person to PM.\
-\n\n`.disapprove`\
+\n\n`.nopm`\
 \nUsage: Disapproves the mentioned/replied person to PM.\
 \n\n`.block`\
 \nUsage: Blocks the person.\
