@@ -30,5 +30,4 @@ CMD_HELP.update({
         "covid":
         "`.covid`"
         "\nUsage: Get an information about covid-19 data in Worldwide."
-
-    })
+  })
