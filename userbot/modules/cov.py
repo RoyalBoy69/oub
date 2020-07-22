@@ -9,7 +9,7 @@ from covid import Covid
 from userbot import CMD_HELP
 from userbot.events import register
 
-@register(outgoing=True, pattern="^.covid (.*)")
+@register(outgoing=True, pattern="^.covid$")
 async def corona(event):
     await event.edit("`Processing...`")
     country = "World"
@@ -21,7 +21,7 @@ async def corona(event):
         output_text += f"`🤕Critical    : {country_data['critical']}`\n"
         output_text += f"`⚰️Deaths      : {country_data['deaths']} (+{country_data['new_deaths']})`\n"
         output_text += f"`😇Recovered   : {country_data['recovered']}`\n"
-        output_text += f"`🧪Total tests : N/A`\n"
+        output_text += f"`🧪Total tests : {country_data['total_tests']}`\n"
         output_text += f"Data provided by [Worldometer](https://www.worldometers.info/coronavirus/country/{country})"
     else:
         output_text = "No information yet about this country!"
