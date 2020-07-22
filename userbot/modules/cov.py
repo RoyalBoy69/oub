@@ -3,7 +3,6 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-
 from datetime import datetime
 from covid import Covid
 from userbot import CMD_HELP
@@ -12,7 +11,7 @@ from userbot.events import register
 @register(outgoing=True, pattern="^.covid (.*)")
 async def corona(event):
     await event.edit("`Processing...`")
-    country = "World"
+    country = event.pattern_match.group(1)
     covid = Covid(source="worldometers")
     country_data = covid.get_status_by_country_name(country)
     if country_data:
@@ -27,7 +26,6 @@ async def corona(event):
         output_text = "No information yet about this country!"
 
     await event.edit(f"`Corona Virus Info in {country}:`\n\n{output_text}")
-
 CMD_HELP.update({
         "covid":
         "`.covid`"
