@@ -807,7 +807,7 @@ async def univsaye(cowmsg):
 async def kek(keks):
     """ Check yourself ;)"""
     uio = ["/", "\\"]
-    for i in range(1, 15):
+    for i in range(1, 295):
         time.sleep(0.3)
         await keks.edit(":" + uio[i % 2])
 
@@ -886,7 +886,7 @@ async def slap(replied_user, event):
 async def lol(lel):
     """ Ok... """
     okay = "-_-"
-    for i in range(10):
+    for i in range(225):
         okay = okay[:-1] + "_-"
         await lel.edit(okay)
 
@@ -909,7 +909,7 @@ async def decide(event):
 @register(outgoing=True, pattern="^;_;$", ignore_unsafe=True)
 async def fun(e):
     t = ";_;"
-    for j in range(10):
+    for j in range(225):
         t = t[:-1] + "_;"
         await e.edit(t)
 
