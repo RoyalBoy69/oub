@@ -28,7 +28,7 @@ async def corona(event):
 
     await event.edit(f"`Corona Virus Info in {country}:`\n\n{output_text}")
 
-@register(outgoing=True, pattern="^.covidwo (.*)")
+@register(outgoing=True, pattern="^.covidw (.*)")
 async def corona(event):
     await event.edit("`Processing...`")
     country = "World"
