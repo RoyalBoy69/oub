@@ -55,4 +55,5 @@ async def _(event):
 CMD_HELP.update({
   "lovestory":
    "`.lovestory`\
-\nUsage: Find yourself."})
+\nUsage: Find yourself."
+})
