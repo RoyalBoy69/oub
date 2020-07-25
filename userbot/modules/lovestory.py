@@ -7,6 +7,7 @@ from telethon import events
 from userbot.events import register
 from asyncio import sleep
 import time
+from userbot import CMD_HELP
 
 @register(pattern=".lovestory")
 
@@ -49,3 +50,9 @@ async def _(event):
         await asyncio.sleep(animation_interval)
 
         await event.edit(animation_chars[i % 103])
+        
+
+CMD_HELP.update({
+  "lovestory":
+   "`.lovestory`\
+\nUsage: Find yourself.\  
