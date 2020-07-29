@@ -68,7 +68,7 @@ async def oldy(event):
 
 CMD_HELP.update({
 "fonts":
-".weebify :- weebifys your text \
-\n.circlify :- circlifies text \
-\n.oldeng :- old eng font"
+"`.weebify` :- weebifys your text \
+\n`.circlify` :- circlifies text \
+\n`.oldeng` :- old eng font"
 })
