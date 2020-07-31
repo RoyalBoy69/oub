@@ -26,5 +26,5 @@ async def help(event):
         string = ""
         for i in sorted(CMD_HELP):
             string += "`" + str(i)
-            string += "`  ⛌  "
+            string += "`  x  "
         await event.reply(string)
