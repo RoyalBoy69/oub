@@ -315,8 +315,8 @@ async def typewriter(typew):
     sleep(0.03)
     await typew.edit(str(number) + "%   ████████████████▌")
     sleep(1)
-    await typew.edit("Tokek Goreng Siap di Santap! Jangan lupa Menu penutup nya [DISINI](http://javbus.com)")
-    # I did it for two hours :D just ctrl+c - crtl+v
+    await typew.edit("Koi jarurat nahi hai teri eha Pehli Fursat main [Nikal](https://telegra.ph/file/ca0bb6c65786701742d70.mp4)")
+
 
 CMD_HELP.update({
     "fakeload":
