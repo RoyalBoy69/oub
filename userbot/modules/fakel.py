@@ -7,6 +7,7 @@ import time
 from datetime import datetime
 from userbot.utils import admin_cmd, progress
 from userbot.events import register
+from userbot import bot, TEMP_DOWNLOAD_DIRECTORY, CMD_HELP
 
 @register(outgoing=True, pattern="^.convert(?: |$)(.*)")  # pylint:disable=E0602
  def _(event):
