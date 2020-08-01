@@ -49,7 +49,7 @@ async def corona(event):
 
 
 CMD_HELP.update({
-        "cod19":
+        "covid19":
         "`.cod19 `**<country>**"
         "\n`Usage: Get an information about covid-19 data in your country.`\n\n"
         "`.cod19`"
