@@ -210,7 +210,7 @@ async def nekobot(cat):
     await cat.client.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete()
     
-@register(pattern="^.kanna(?: |$)(.*)", outgoing=True)    
+@register(pattern="^.ph(?: |$)(.*)", outgoing=True)    
 async def phcomment(text1,text2,text3):
     r = requests.get(
             f"https://nekobot.xyz/api/imagegen?type=phcomment&image={text1}&text={text2}&username={text3}").json()
