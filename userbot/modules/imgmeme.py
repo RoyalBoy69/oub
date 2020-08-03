@@ -210,6 +210,23 @@ async def nekobot(cat):
     await cat.client.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete()
     
+@register(pattern="^.kanna(?: |$)(.*)", outgoing=True)    
+async def phcomment(text1,text2,text3):
+    r = requests.get(
+            f"https://nekobot.xyz/api/imagegen?type=phcomment&image={text1}&text={text2}&username={text3}").json()
+    sandy = r.get("message")
+    caturl = url(sandy)
+    if not caturl:
+        return  "check syntax once more"
+    with open("temp.png", "wb") as f:
+        f.write(requests.get(sandy).content)
+    img = Image.open("temp.png")
+    if img.mode != 'RGB':
+        img = img.convert('RGB')
+    img.save("temp.jpg", "jpeg")    
+    return "temp.jpg"
+
+    
 CMD_HELP.update({
 "imgmeme":
 "For fun purpose 😛😛😏😏\
