@@ -36,6 +36,14 @@ def deEmojify(inputString: str) -> str:
     """Remove emojis and other non-safe characters from string"""
     return re.sub(EMOJI_PATTERN, '', inputString)
 
+def convert_toimage(image):
+    img = Image.open(image)
+    if img.mode != 'RGB':
+        img = img.convert('RGB')
+    img.save("temp.jpg", "jpeg")
+    os.remove(image)
+    return "temp.jpg"
+
 async def trumptweet(text):
         r = requests.get(
             f"https://nekobot.xyz/api/imagegen?type=trumptweet&text={text}").json()
