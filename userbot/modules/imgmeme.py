@@ -248,7 +248,7 @@ async def nekobot(cat):
     except:
         pass   
     text = deEmojify(text)
-    catfile = await kannagen(text)
+    catfile = await phcomment(text1,text2,text3)
     await cat.client.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete()
     
