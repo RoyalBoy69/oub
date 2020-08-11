@@ -8,7 +8,6 @@ from userbot.events import register
 from asyncio import sleep
 import time
 from userbot import CMD_HELP
-import io
 
 @register(pattern=".lovestory")
 
@@ -48,11 +47,9 @@ async def _(event):
 
     for i in animation_ttl:
 
-        await asyncio.sleep(animation_interval
-          
-    uio = ["1 ❤️ love story", "The End 😂"]
+        await asyncio.sleep(animation_interval)
 
-        await event.edit(animation_chars + uio[i % 103])
+        await event.edit(animation_chars[i % 103])
         
 
 CMD_HELP.update({
