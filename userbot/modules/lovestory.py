@@ -50,7 +50,7 @@ async def _(event):
 
         await asyncio.sleep(animation_interval
           
-        uio = ["1 ❤️ love story", "The End 😂"]
+    uio = ["1 ❤️ love story", "The End 😂"]
 
         await event.edit(animation_chars + uio[i % 103])
         
