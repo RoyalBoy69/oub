@@ -8,6 +8,7 @@ from userbot.events import register
 from asyncio import sleep
 import time
 from userbot import CMD_HELP
+import io
 
 @register(pattern=".lovestory")
 
