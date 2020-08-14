@@ -202,7 +202,7 @@ async def amireallyalive(alive):
               " \n"
               f"ℜøℽⱥl'z Bot: E.D.I.T.H. \n"
               f"Even Dead, I'm The Hero! 😎 "
-              "`")
+              ".")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
