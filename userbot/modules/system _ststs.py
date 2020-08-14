@@ -188,9 +188,9 @@ async def pipcheck(pip):
         else:
             await pip.edit("`Use .help system to see an example`")
 
-@register(outgoing=True, pattern="^.start$")
+@register(outgoing=True, pattern="^.offline$")
 async def amireallyalive(alive):
-    """ For .start command, check if the bot is running.  """
+    """ For .offline command, check if the bot is running.  """
     logo = ALIVE_LOGO
     output = ("E.D.I.T.H. is online. \n"
               " \n"
