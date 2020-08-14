@@ -192,14 +192,17 @@ async def pipcheck(pip):
 async def amireallyalive(alive):
     """ For .start command, check if the bot is running.  """
     logo = ALIVE_LOGO
-    output = (f"`🤖 STATUS: Remix is running ✅`\n"
-             f"`Telethon version`: {version.__version__} \n"
-             f"`Python version🐍`: {python_version()} \n"
-             f"`Bot Version🤘: Remix {BOT_VER}` \n"
-             f"==================================== \n"
-             f"User 👨‍🚀: {DEFAULTUSER} \n"
-             f"Maintainer 🏄‍♂️: @heyworld \n"
-             f"====================================\n")
+    output = ("E.D.I.T.H. is online. \n"
+              " \n"
+              f"Telethon version: {version.__version__} \n"
+              f"Python: {python_version()} \n"
+              f"Bot Version: Remix {BOT_VER} \n"
+              " \n"
+              f"Owner: [ℜøℽⱥl ẞøℽ ꧁やℜiℽⱥήshu꧂](t.me/RoyalBoyPriyanshu)\n"
+              " \n"
+              f"ℜøℽⱥl'z Bot: E.D.I.T.H. \n"
+              f"Even Dead, I'm The Hero! 😎 "
+              "`")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
