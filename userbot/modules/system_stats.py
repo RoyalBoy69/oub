@@ -220,6 +220,7 @@ async def pipcheck(pip):
 async def amireallyalive(alive):
     """ For .offline command, check if the bot is running.  """
     logo = ALIVE_LOGO
+    uptime = await get_readable_time((time.time() - StartTime))
     output = ("E.D.I.T.H. is online. \n"
               " \n"
               f"Telethon version: {version.__version__} \n"
