@@ -1,6 +1,6 @@
      
 # Project OpenUserBot Remix.
-[![Build Status](https://travis-ci.com/RoyalBoy69/oub-remix.svg?branch=sql-extended)](https://travis-ci.com/RoyalBoy69/oub-remix) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/38fee611df7c4312be63a15cad64a50a)](https://www.codacy.com/manual/sahyam2019/oub-remix?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sahyam2019/oub-remix&amp;utm_campaign=Badge_Grade) ![Last Commit](https://img.shields.io/github/last-commit/RoyalBoy69/oub-remix) ![Contributers](https://img.shields.io/github/contributors/RoyalBoy69/oub-remix) ![Forks](https://img.shields.io/github/forks/RoyalBoy69/oub-remix) <a href="https://t.me/RoyalBoyPriyanshu"><img src="https://img.shields.io/badge/-Telegram%20Account-red.svg?logo=Telegram"></a>
+[![Build Status](https://travis-ci.com/RoyalBoy69/oub-remix.svg?branch=sql-extended)](https://travis-ci.com/RoyalBoy69/oub-remix) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/38fee611df7c4312be63a15cad64a50a)](https://www.codacy.com/manual/sahyam2019/oub-remix?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sahyam2019/oub-remix&amp;utm_campaign=Badge_Grade) ![Last Commit](https://img.shields.io/github/last-commit/RoyalBoy69/oub-remix) ![Contributers](https://img.shields.io/github/contributors/RoyalBoy69/oub-remix) ![Forks](https://img.shields.io/github/forks/RoyalBoy69/oub-remix)
 
 ![logo](https://telegra.ph/file/00bf9e55d8519c186db1b.jpg)
 
