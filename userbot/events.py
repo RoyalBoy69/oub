@@ -143,7 +143,7 @@ def register(**args):
 
                     ftext += result
 
-                    with open("error.log", "w+") as file:
+                    with open("error.txt", "w+") as file:
                         file.write(ftext)
 
                     if LOGSPAMMER:
@@ -156,9 +156,9 @@ def register(**args):
 
 
                     await check.client.send_file(send_to,
-                                                 "error.log",
+                                                 "error.txt",
                                                  caption=text)
-                    remove("error.log")
+                    remove("error.txt")
             else:
                 pass
 
