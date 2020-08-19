@@ -5,6 +5,7 @@ import urllib.request
 from userbot.events import register
 from userbot import bot, CMD_HELP
 from os import remove
+from userbot import ImageOps
 #
 @register(pattern="^.stkrflip(?: |$)(.*)", outgoing=True)
 async def flipsticker(event):
