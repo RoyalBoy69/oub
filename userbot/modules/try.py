@@ -29,4 +29,4 @@ CMD_HELP.update({
   "stkrflip":
   ".stkrflip\
 \nUsage:flip sticker."
-)
+})
