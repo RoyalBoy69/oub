@@ -24,5 +24,9 @@ async def flipsticker(event):
     sticker_webp.save(sticker_flipped_io, "WebP")
     sticker_flipped_io.name = "sticker.webp"
     sticker_flipped_io.seek(0)
-
     await event.reply(file=sticker_flipped_io)
+CMD_HELP.update({
+  "stkrflip":
+  ".stkrflip\
+\nUsage:flip sticker."
+)
