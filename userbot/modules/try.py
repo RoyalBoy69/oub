@@ -6,7 +6,7 @@ from userbot.events import register
 from userbot import bot, CMD_HELP
 from os import remove
 #
-@register(pattern="^.mff(?: |$)(.*)", outgoing=True)
+@register(pattern="^.stkrflip(?: |$)(.*)", outgoing=True)
 async def flipsticker(event):
     reply = await event.get_reply_message()
 
@@ -27,6 +27,6 @@ async def flipsticker(event):
     await event.reply(file=sticker_flipped_io)
 CMD_HELP.update({
   "stkrflip":
-  ".stkrflip\
+  "`.stkrflip`\
 \nUsage:flip sticker."
 })
