@@ -1149,7 +1149,7 @@ async def metoo(hahayes):
 
 @register(outgoing=True, pattern="^.oof$")
 async def Oof(e):
-    t = "oof"
+    t = "Oof"
     for j in range(16):
         t = t[:-1] + "of"
         await e.edit(t)
