@@ -15,7 +15,7 @@ async def glitch(cat):
     await cat.edit("```Glitching... 😁```")
     cmd = cat.pattern_match.group(0)
     catinput = cat.pattern_match.group(1)
-    reply = await cat.get_reply_message()
+    reply = await cat.get_reply_message(3)
     if not (reply and (reply.media)):
         await cat.edit("`Media not found...`")
         return
