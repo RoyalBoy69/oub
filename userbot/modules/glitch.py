@@ -14,7 +14,7 @@ from userbot.events import register
 async def glitch(cat):
     await cat.edit("```Glitching... 😁```")
     cmd = cat.pattern_match.group(1)
-    catinput = cat.pattern_match.group(2)
+    catinput = cat.pattern_match.group(1)
     reply = await cat.get_reply_message()
     if not (reply and (reply.media)):
         await cat.edit("`Media not found...`")
