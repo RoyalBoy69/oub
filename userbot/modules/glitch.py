@@ -9,6 +9,7 @@ from glitch_this import ImageGlitcher
 from userbot.utils.funtions import runcmd, take_screen_shot
 from userbot import bot, LOGS, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
+from userbot import event
 
 @register(pattern="^.glitch(?: |$)(.*)", outgoing=True)
 async def glitch(cat):
