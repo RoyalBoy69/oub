@@ -9,7 +9,7 @@ import time
 from userbot import CMD_HELP
 
 
-@register(pattern=".lovestory")
+@register(pattern=".muth")
 
 async def _(event):
 
