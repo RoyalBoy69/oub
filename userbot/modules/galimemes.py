@@ -138,7 +138,7 @@ async def raping (raped):
     """ Dont Rape Too much -_-"""
     await raped.edit(choice(RAPE_STRINGS))
 
-@register(outgoing=True, pattern="^.fuk$")
+@register(outgoing=True, pattern="^.fukk$")
 async def chutiya (fuks):
     """ String for fhu only -_-"""
     await fuks.edit(choice(FUK_STRINGS))
