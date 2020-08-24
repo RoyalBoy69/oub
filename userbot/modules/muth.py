@@ -1,4 +1,4 @@
-# ported from X-TRA-TELEGRAM by @RoyalBoyPriyanshu
+#ported from X-TRA-TELEGRAM by @RoyalBoyPriyanshu
 
 import random, re
 import asyncio
