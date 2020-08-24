@@ -19,7 +19,7 @@ async def _(event):
 
     animation_interval = 0.3
 
-    animation_ttl = range(0, 100)
+    animation_ttl = range(0, 103)
 
     #input_str = event.pattern_match.group(1)
 
@@ -55,7 +55,7 @@ async def _(event):
         
         await asyncio.sleep(animation_interval)
         
-        await event.edit(animation_chars[i % 100])
+        await event.edit(animation_chars[i % 103])
 
 CMD_HELP.update({
   "muth":
