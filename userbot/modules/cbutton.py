@@ -30,8 +30,8 @@ async def _(event):
     prev = 0
     note_data = ""
     buttons = []
-    for match in BTN_URL_REGEX.finditer
-    (markdown_note):
+    for match in BTN_URL_REGEX.finditer(
+    markdown_note):
         # Check if btnurl is escaped
         n_escapes = 0
         to_check = match.start(1) - 1
