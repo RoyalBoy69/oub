@@ -25,9 +25,9 @@ async def _(event):
 
     #if input_str == "muth":
 
-        await event.edit("Starting")
+    await event.edit("Starting")
 
-        animation_chars = [
+    animation_chars = [
 
             "8✊️===D",
 
