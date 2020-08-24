@@ -62,7 +62,7 @@ async def _(event):
     tgbot_reply_message = None
     if reply_message.media is not None:
         message_id_in_channel = reply_message.id
-        tgbot_reply_message = await event.send_message(
+        tgbot_reply_message = await e.client.send_message(
             entity=BOTLOG_CHATID,
             ids=message_id_in_channel
         )
