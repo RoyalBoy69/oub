@@ -5,7 +5,7 @@ from telethon import events
 import asyncio
 import os
 import sys
-from userbot.util import admin_cmd
+
 from userbot import CMD_HELP
 from userbot.events import register
 
