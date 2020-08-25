@@ -88,8 +88,8 @@ async def _(event):
 
 CMD_HELP.update({
   "muth":
-   "\`.muth`\
+   "`.muth`\
 \nUsage: Find yourself.\
 \n\n`.brain`\
-n\Usage: Your dump brain."
+\nUsage: Your dump brain."
 })            
