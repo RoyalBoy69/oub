@@ -47,7 +47,7 @@ async def cheer(event):
 async def getwell(event):
     if event.fwd_from:
         return
-    await event.edit("🌹🌹🌹🌹🌹🌹🌹🌹 \n🌹😷😢😓😷😢💨🌹\n🌹💝💉🍵💊💐💝🌹\n🌹😊GetBetter Soon!!😊🌹\n🌹🌹🌹🌹🌹🌹🌹🌹")
+    await event.edit("🌹🌹🌹🌹🌹🌹🌹🌹 \n🌹😷😢😓😷😢💨🌹\n🌹💝💉🍵💊💐💝🌹\n🌹😊GetBetter Soon😊🌹\n🌹🌹🌹🌹🌹🌹🌹🌹")
 
 @register(pattern=".luck")
 async def luck(event):
