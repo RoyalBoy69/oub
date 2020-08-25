@@ -245,9 +245,9 @@ async def fcmd(e):
         return
     message = e.text
 
-    if message[-1] == 'p' and message[-2] == 'f':
+    if message[-1] == 'p' and message[-2] == 'F':
         await e.edit("🤦‍♂")
-    elif message[-1] == 'f':
+    elif message[-1] == 'F':
         await e.edit("┏━━━┓\n┃┏━━┛\n┃┗━━┓\n┃┏━━┛\n┃┃\n┗┛")
 
     else:
