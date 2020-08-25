@@ -9,6 +9,7 @@
 import asyncio
 from random import choice
 from re import sub
+from userbot import html
 
 from userbot import CMD_HELP
 from userbot.events import register
