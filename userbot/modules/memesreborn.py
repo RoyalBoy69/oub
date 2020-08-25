@@ -266,7 +266,7 @@ CMD_HELP.update({
 \n\n`.iwi`\
 \nUsage: gib text and see magik.\
 \n\n`.rape` `.thanos` `.chu` `.abuse` `.abusehard` `.gtfo` `.f` `\
-\n\n`.upro` `.nikal` `iwi` `.\
+\n\n`.upro` `.nikal` `iwi`.\
 \nUsage: See it yourself nibba🌚."
 
 })
