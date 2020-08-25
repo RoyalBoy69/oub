@@ -59,7 +59,7 @@ async def _(event):
         
         await event.edit(animation_chars[i % 103])
         
-@register(pattern=".brain)
+@register(pattern=".brain")
 async def _(event):
     if event.fwd_from:
         return
