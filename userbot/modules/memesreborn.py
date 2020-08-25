@@ -143,7 +143,7 @@ async def raping (raped):
     """ Dont Rape Too much -_-"""
     await raped.edit(choice(RAPE_STRINGS))
 
-@register(outgoing=True, pattern="^.fuk$")
+@register(outgoing=True, pattern="^.fuck$")
 async def chutiya (fuks):
     """ String for fhu only -_-"""
     await fuks.edit(choice(FUK_STRINGS))
@@ -239,13 +239,13 @@ async def gtfo(e):
                      "`\n█▄▄▄▄▄▄▄███▄▄███▄▄██████▄▄▄▄▄▄█ `"
                      "`\n███████████████████████████████ `")
 
-@register(outgoing=True, pattern=r"^.f")
+@register(outgoing=True, pattern=r"^.F")
 async def fcmd(e):
     if e.text[0].isalpha() or e.text[0] in ("/", "#", "@", "!"):
         return
     message = e.text
 
-    if message[-1] == 'p' and message[-2] == 'f':
+    if message[-1] == 'p' and message[-2] == '':
         await e.edit("🤦‍♂")
     elif message[-1] == 'f':
         await e.edit("┏━━━┓\n┃┏━━┛\n┃┗━━┓\n┃┏━━┛\n┃┃\n┗┛")
@@ -265,8 +265,7 @@ CMD_HELP.update({
 \nUsage: Greet Evrii Nibba in da house.\
 \n\n`.iwi`\
 \nUsage: gib text and see magik.\
-\n\n`.rape` `.thanos` `.chu` `.abuse` `.abusehard` `.gtfo` `.f` `\
-\n\n`.upro` `.nikal` `iwi` `.\
+\n\n`.rape` `.thanos` `.chu` `.abuse` `.abusehard` `.gtfo` `.F` `.upro` `.nikal` `iwi` `.\
 \nUsage: See it yourself nibba🌚."
 
 })
