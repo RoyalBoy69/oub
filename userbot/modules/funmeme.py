@@ -9,7 +9,7 @@ import sys
 from userbot import CMD_HELP
 from userbot.events import register
 
-register(pattern=".lmoon")
+@register(pattern=".lmoon")
 async def test(event):
     if event.fwd_from:
         return 
