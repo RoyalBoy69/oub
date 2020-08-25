@@ -12,7 +12,7 @@ from random import choice
 from re import sub
 
 
-from userbot import CMD_HELP
+from userbot import CMD_HELP, bot
 from userbot.events import register
 
 # ================= CONSTANT =================
