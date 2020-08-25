@@ -63,16 +63,16 @@ async def sprinkle(event):
  
 CMD_HELP.update({
     "funmeme":
-      "`loon`\
+      "`.loon`\
       \nUsage:Moon meme\
-      \n\n`hii`\
+      \n\n`.hii`\
       \nUsage:Hi message.\
-      \n\n`cheer`\
+      \n\n`.cheer`\
       \nUsage:Cheer Up\
-      \n\n`getwell`\
+      \n\n`.getwell`\
       \nUsage:Getwell Soon\
-      \n\n`luck`\
+      \n\n`.luck`\
       \nUsage:So lucky\
-      \n\n`sprinkle`\
+      \n\n`.sprinkle`\
       \nUsage: Don't khow how it work"
       })
