@@ -6,6 +6,8 @@ import asyncio
 import os
 import sys
 from uniborg.util import admin_cmd
+from userbot import CMD_HELP
+from userbot.events import register
 
 register(pattern=".lmoon")
 async def test(event):
