@@ -73,6 +73,6 @@ CMD_HELP.update({
       \nUsage:Getwell Soon\
       \n\n`luck`\
       \nUsage:So lucky\
-      \n\n`sprinkle`
+      \n\n`sprinkle`\
       \nUsage: Don't khow how it work"
       })
