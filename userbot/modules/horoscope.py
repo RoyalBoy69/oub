@@ -5,16 +5,16 @@ from userbot.events import register
 ASTRO = ""
 
 
-@register(outgoing=True, pattern="^.hc$")
+@register(outgoing=True, disable_errors=True, pattern=r"^\.hc (.*)")
 async def astro(e):
-    await event.edit("Fetching data...")
-    if not event.pattern_match.group(0):
+    await e.edit("Fetching data...")
+    if not e.pattern_match.group(1):
         x = ASTRO
         if not x:
-            await event.edit("Not Found.")
+            await e.edit("Not Found.")
             return
     else:
-        x = event.pattern_match.group(1)
+        x = e.pattern_match.group(1)
     horoscope = pyaztro.Aztro(sign=x)
     mood = horoscope.mood
     lt = horoscope.lucky_time
