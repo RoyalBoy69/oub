@@ -156,7 +156,7 @@ async def chutiya (chus):
 @register(outgoing=True, pattern="^.thanos$")
 async def thanos (thanos):
     """ String for thanos only -_-"""
-    await thanos.edit(choice(THANOS_STRING))
+    await thanos.edit(choice(THANOS_STRINGS))
 	
 @register(outgoing=True, pattern="^.abusehard$")
 async def fuckedd (abusehard):
