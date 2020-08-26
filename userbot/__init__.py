@@ -419,7 +419,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = "Abe chutiye khud bot bana mere use mt kr lowde,pta nhi kha kha ah jate h"
+                reply_pop_up_alert = "Abe kiu dusre ka  bot use kr rha khud ka bana pta nhi kha se ata h kaise log h chal futt ab"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
