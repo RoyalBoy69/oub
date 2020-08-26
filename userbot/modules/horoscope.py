@@ -7,14 +7,14 @@ ASTRO = ""
 
 @register(outgoing=True, pattern="^.hc$")
 async def astro(e):
-    await e.edit("Fetching data...")
-    if not e.pattern_match.group(1):
+    await event.edit("Fetching data...")
+    if not event.pattern_match.group(0):
         x = ASTRO
         if not x:
-            await e.edit("Not Found.")
+            await event.edit("Not Found.")
             return
     else:
-        x = e.pattern_match.group(1)
+        x = event.pattern_match.group(1)
     horoscope = pyaztro.Aztro(sign=x)
     mood = horoscope.mood
     lt = horoscope.lucky_time
