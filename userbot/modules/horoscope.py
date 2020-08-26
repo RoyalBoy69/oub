@@ -5,7 +5,7 @@ from userbot.events import register
 ASTRO = ""
 
 
-@register(outgoing=True, disable_errors=True, pattern=r"^\.hc (.*)")
+@register(outgoing=True, pattern="^.hc$")
 async def astro(e):
     await e.edit("Fetching data...")
     if not e.pattern_match.group(1):
