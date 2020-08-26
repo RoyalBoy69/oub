@@ -157,6 +157,7 @@ async def chutiya (chus):
 async def thanos (thanos):
     """ String for thanos only -_-"""
     await thanos.edit(choice(THANOS_STRING))
+	
 @register(outgoing=True, pattern="^.abusehard$")
 async def fuckedd (abusehard):
     """ Dont Use this Too much bsdk -_-"""
