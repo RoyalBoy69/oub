@@ -86,20 +86,7 @@ async def _(event):
     	await asyncio.sleep(animation_interval)
     	await event.edit(animation_chars[i %14 ])
 
-"""
-Available Commands: .gf
-
-by @KshitijGagan
-inspired from @xcruzhd2 """
-
-from telethon import events
-
-import asyncio
-
-
-
-
-@register(pattern=".muth")
+@register(pattern=".gf")
 async def _(event):
     if event.fwd_from:
         return
