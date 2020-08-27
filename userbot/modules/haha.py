@@ -93,7 +93,7 @@ async def _(event):
     animation_interval = 0.3
     animation_ttl = range(0, 21)
     await event.edit("Starting lol")
-        animation_chars = [
+    animation_chars = [
             "`Ruk jaa , Abhi teri GF ko Fuck karta hu `",
             "`Making your Gf warm 🔥`",
             "`Pressing her boobs 🤚😘`",
