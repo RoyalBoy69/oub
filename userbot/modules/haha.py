@@ -123,7 +123,7 @@ async def _(event):
 
 
 CMD_HELP.update({
-  "muth":
+  "nope":
    "`.muth`\
 \nUsage: Find yourself.\
 \n\n`.brain`\
