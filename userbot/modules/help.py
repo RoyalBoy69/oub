@@ -27,13 +27,8 @@ async def help(event):
         string = ""
         for i in sorted(CMD_HELP):
             string += "`" + str(i)
-<<<<<<< HEAD
             string += "`  x  "
-        await event.reply(string)
-=======
-            string += "`  -  "
         modules_list = await event.reply(string)
->>>>>>> c10c6a1f54c8afda38f40c91741087a4dac60e54
         await asyncio.sleep(300)
         await modules_list.delete()
         await event.delete()
