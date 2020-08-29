@@ -256,7 +256,7 @@ async def blockpm(block):
     else:
         await block.client(BlockRequest(block.chat_id))
         aname = await block.client.get_entity(block.chat_id)
-        await block.edit("`I think You Noob And I don't appoint Noob's.`\n\n`So You are Useless Person to Discuss it and You've Been Blocked!🖕`")
+        await block.edit("`I think You Noob And I don't appoint Noob's.`\n\n`So You are Useless Person to Discuss it and You've Been Blocked! Now You Just Fuck Off 🖕🖕🤬🤬`")
         name0 = str(aname.first_name)
         uid = block.chat_id
 
