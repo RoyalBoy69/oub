@@ -69,7 +69,7 @@ async def _(event):
     if event.fwd_from:
         return
     animation_interval = 0.5
-    animation_ttl = range(0, 70)
+    animation_ttl = range(0, 35)
     await event.edit("loveu")
     animation_chars = [
 
