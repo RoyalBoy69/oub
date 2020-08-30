@@ -196,6 +196,8 @@ CMD_HELP.update({
 \nUsage: Find yourself.\
 \n\n`.brain`\
 \nUsage: Your dump brain.\
+\n\n`.lovestory`\
+\nUsage:A lovestory of 2 couple\
 \n\n`gf`\
 \nUsage:Fu*cing your gf.\
 \n\n`.fuk`\
