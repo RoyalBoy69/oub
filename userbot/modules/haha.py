@@ -70,7 +70,7 @@ async def _(event):
         return
     animation_interval = 0.5
     animation_ttl = range(0, 35)
-    await event.edit("loveu")
+    await event.edit("Starting")
     animation_chars = [
 
             "😀",
@@ -141,7 +141,7 @@ async def _(event):
 
             "❤",
 
-            "i Love You❤",   
+            "The End",   
 
         ]
     for i in animation_ttl:
