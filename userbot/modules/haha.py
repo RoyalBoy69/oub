@@ -64,6 +64,51 @@ async def _(event):
         
         await event.edit(animation_chars[i % 11])
         
+@register(pattern=".tmoon")        
+async def _(event):
+    if event.fwd_from:
+        return
+    animation_interval = 0.3
+    animation_ttl = range(0, 11)
+    animation_chars = [
+
+            "🌗",
+            "🌘",    
+            "🌑",
+            "🌒",
+            "🌓",
+            "🌔",
+            "🌕",
+            "🌖",
+            "🌗",
+            "🌘",    
+            "🌑",
+            "🌒",
+            "🌓",
+            "🌔",
+            "🌕",
+            "🌖",
+            "🌗",
+            "🌘",    
+            "🌑",
+            "🌒",
+            "🌓",
+            "🌔",
+            "🌕",
+            "🌖",
+            "🌗",
+            "🌘",    
+            "🌑",
+            "🌒",
+            "🌓",
+            "🌔",
+            "🌕",
+            "🌖"
+        ]
+    for i in animation_ttl:
+    	await asyncio.sleep(animation_interval)
+    	await event.edit(animation_chars[i % 32])
+        
 @register(pattern=".brain")
 async def _(event):
     if event.fwd_from:
