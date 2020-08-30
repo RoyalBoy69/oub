@@ -139,5 +139,7 @@ CMD_HELP.update({
 \n\n`.brain`\
 \nUsage: Your dump brain.\
 \n\n`gf`\
-\nUsage:Fu*cing your gf."
+\nUsage:Fu*cing your gf.\
+\n\n`.fuk`\
+\nUsage:Fuck!!"
 })            
