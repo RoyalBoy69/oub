@@ -64,7 +64,7 @@ async def _(event):
         
         await event.edit(animation_chars[i % 11])
         
-@register(pattern=".loveu")
+@register(pattern=".anim2")
 async def _(event):
     if event.fwd_from:
         return
@@ -327,6 +327,8 @@ CMD_HELP.update({
 \nUsage: Your dump brain.\
 \n\n`.lovestory`\
 \nUsage:A lovestory of 2 couple\
+\n\n\`anim2`\
+\nUsage: Find it your self\
 \n\n`gf`\
 \nUsage:Fu*cing your gf.\
 \n\n`.fuk`\
