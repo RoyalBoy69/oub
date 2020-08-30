@@ -144,12 +144,10 @@ async def _(event):
             "i Love You❤",   
 
         ]
-
     for i in animation_ttl:
-        await asyncio.sleep(animation_interval)
+    	await asyncio.sleep(animation_interval)
     	await event.edit(animation_chars[i % 35])
-    
-
+        
 @register(pattern=".tmoon")        
 async def _(event):
     if event.fwd_from:
