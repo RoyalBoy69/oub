@@ -70,6 +70,7 @@ telegraph
 python-dateutil
 pyfiglet   
 jotquote
+html_telegraph_poster
 csvfaker
 git+https://github.com/LonamiWebs/Telethon
 git+https://github.com/ahupp/python-magic
@@ -80,6 +81,7 @@ justwatch
 deezloader
 zipfile38
 bitlyshortener
+validators
 geopy
 glitch_this
 twitter_scraper
