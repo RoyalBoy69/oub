@@ -1,5 +1,6 @@
 wheel
 aiohttp
+aiofiles
 aria2p
 async_generator
 cowpy
@@ -83,3 +84,4 @@ geopy
 glitch_this
 twitter_scraper
 pyaztro
+jikanpy
