@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 from emoji import get_emoji_regexp
 from PIL import Image
 from validators.url import url
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 
 
 EMOJI_PATTERN = re.compile(
@@ -60,7 +60,7 @@ async def catbot(catmemes):
     if "|" in input_str:
         username, text = input_str.split("|")
     else:
-        await catmemes.edit("**Syntax :** reply to image or sticker with `.phub (username)|(text in comment)`")
+        await catmemes.edit("**Syntax :** reply to image or sticker with `.ph (username)|(text in comment)`")
         return
     replied = await catmemes.get_reply_message()
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
@@ -79,7 +79,7 @@ async def catbot(catmemes):
         await catmemes.client(cat)
     except:
         pass
-    download_location = await borg.download_media(replied , TEMP_DOWNLOAD_DIRECTORY)
+    download_location = await bot.download_media(replied , TEMP_DOWNLOAD_DIRECTORY)
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)  
     size = os.stat(download_location).st_size    
