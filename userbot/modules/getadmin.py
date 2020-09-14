@@ -7,7 +7,7 @@ from userbot.events import register
 
 
 @register(outgoing=True, pattern="^.getadmin(?: |$)(.*)")
-async def _(event):
+async def getadmin(show):
     if event.fwd_from:
         return
     mentions = "**Admins in this Channel**: \n"
