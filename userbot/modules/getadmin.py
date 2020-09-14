@@ -1,8 +1,8 @@
 """Get Administrators of any Chat*
 Syntax: .get_admin"""
-from telethon import events
+from telethon import events, utils
 from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator
-from userbot.util import admin_cmd
+from userbot.utils.tools import is_admin
 from userbot.events import register
 
 
