@@ -18,7 +18,7 @@ async def _(event):
         should_mention_admins = True
         if event.reply_to_msg_id:
             reply_message = await event.get_reply_message()
-    input_str = event.pattern_match.group(2)
+    input_str = event.pattern_match.group(1)
     to_write_chat = await event.get_input_chat()
     chat = None
     if not input_str:
