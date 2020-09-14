@@ -1,3 +1,4 @@
+#ported form uniborg by @RoyalBoyPriyanshu
 """Get Administrators of any Chat*
 Syntax: .get_admin"""
 from telethon import events, utils
