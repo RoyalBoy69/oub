@@ -7,8 +7,8 @@ from userbot.events import register
 
 
 @register(outgoing=True, pattern="^.getadmin(?: |$)(.*)")
-async def getadmin(show):
-    if show.fwd_from:
+async def getadmin(event):
+    if event.fwd_from:
         return
     mentions = "**Admins in this Channel**: \n"
     should_mention_admins = False
@@ -27,12 +27,12 @@ async def getadmin(show):
         mentions_heading = "Admins in {} channel: \n".format(input_str)
         mentions = mentions_heading
         try:
-            chat = await show.client.get_entity(input_str)
+            chat = await event.client.get_entity(input_str)
         except Exception as e:
             await event.edit(str(e))
             return None
     try:
-        async for x in show.client.iter_participants(chat, filter=ChannelParticipantsAdmins):
+        async for x in event.client.iter_participants(chat, filter=ChannelParticipantsAdmins):
             if not x.deleted:
                 if isinstance(x.participant, ChannelParticipantCreator):
                     mentions += "\n 👑 [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
