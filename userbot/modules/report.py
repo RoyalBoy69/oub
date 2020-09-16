@@ -7,7 +7,7 @@ from userbot.events import register
 
 
 @register(outgoing=True, pattern="^.report(?: |$)(.*)")
-async def _event):
+async def message(event):
     if event.fwd_from:
         return
     mentions = "@admin: 🇸 🇵 🇦 🇲  🇸 🇵 🇴 🇹 🇹 🇪 🇩 "
