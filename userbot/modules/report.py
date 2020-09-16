@@ -10,7 +10,7 @@ from userbot.events import register
 async def admin(event):
     if event.fwd_from:
         return
-    mentions = "@admin: 🇸 🇵 🇦 🇲  🇸 🇵 🇴 🇹 🇹 🇪 🇩 "
+    mentions = "@admin"
     chat = await event.get_input_chat()
     async for x in event.client.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f"[\u2063](tg://user?id={x.id})"
