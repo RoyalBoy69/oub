@@ -7,12 +7,12 @@ from userbot.events import register
 
 
 @register(outgoing=True, pattern="^.report(?: |$)(.*)")
-async def report(event):
+async def admin(event):
     if event.fwd_from:
         return
     mentions = "@admin: 🇸 🇵 🇦 🇲  🇸 🇵 🇴 🇹 🇹 🇪 🇩 "
     chat = await event.get_input_chat()
-    async for x in event.iter_participants(chat, filter=ChannelParticipantsAdmins):
+    async for x in event.client.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f"[\u2063](tg://user?id={x.id})"
     reply_message = None
     if event.reply_to_msg_id:
