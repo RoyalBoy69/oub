@@ -522,3 +522,13 @@ with bot:
             "valid entity. Check your environment variables/config.env file."
         )
         quit(1)
+        
+
+def ibuild_keyboard(buttons):
+    keyb = []
+    for btn in buttons:
+        if btn[2] and keyb:
+            keyb[-1].append(Button.url(btn[0], btn[1]))
+        else:
+            keyb.append([Button.url(btn[0], btn[1])])
+    return keyb
