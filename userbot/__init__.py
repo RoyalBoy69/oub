@@ -389,7 +389,7 @@ with bot:
                     buttons=[],
                     link_preview=True)
 
-            elif event.query.user_id == bot.uid and query.startswith("Inline buttons"):
+            elif event.query.user_id == uid and query.startswith("Inline buttons"):
                 markdown_note = query[14:]
                 prev = 0
                 note_data = ""
