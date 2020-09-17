@@ -418,7 +418,14 @@ with bot:
                 else:
                     note_data += markdown_note[prev:]
                 message_text = note_data.strip()
-                tl_ib_buttons = ibuild_keyboard(buttons)
+                keyb = []
+                for btn in buttons:
+                    if btn[2] and keyb:
+                        keyb[-1].append(custom.Button.url(btn[0], btn[1]))
+                    else:
+                        keyb.append([custom.Button.url(btn[0], btn[1])])
+                tl_ib_buttons = keyb
+
                 result = builder.article(
                     title="Inline creator",
                     text=message_text,
@@ -510,16 +517,7 @@ with bot:
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        def ibuild_keyboard(buttons):
-            keyb = []
-            for btn in buttons:
-                if btn[2] and keyb:
-                    keyb[-1].append(Button.url(btn[0], btn[1]))
-                else:
-                    keyb.append([Button.url(btn[0], btn[1])])
-            return keyb
-
-        
+              
     except BaseException:
         LOGS.info(
             "Support for inline is disabled on your bot. "
