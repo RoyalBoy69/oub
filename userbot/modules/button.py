@@ -7,7 +7,7 @@ import os
 import re
 from telethon import Button
 from userbot.utils.tools import is_admin
-from userbot import BOT_TOKEN, CMD_HELP, bot
+from userbot import BOT_USERNAME, CMD_HELP, bot
 from userbot.events import register
 # regex obtained from:
 # https://github.com/PaulSonOfLars/tgbot/blob/master/tg_bot/modules/helper_funcs/string_handling.py#L23
@@ -80,7 +80,7 @@ async def ibutton(event):
         await edit_or_reply(event, "`Give me some thing to write in bot inline`")
         return
     catinput = "Inline buttons " + catinput
-    tgbotusername = BOT_TOKEN
+    tgbotusername = BOT_USERNAME
     results = await bot.inline_query(tgbotusername, catinput)
     await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
     await event.delete()
