@@ -19,7 +19,7 @@ from pymongo import MongoClient
 from redis import StrictRedis
 from dotenv import load_dotenv
 from requests import get
-from telethon.sync import TelegramClient, custom, events, Button
+from telethon.sync import TelegramClient, custom, events
 from telethon.sessions import StringSession
 
 load_dotenv("config.env")
@@ -318,12 +318,12 @@ AFKREASON = None
 
 
 def paginate_help(page_number, loaded_modules, prefix):
-    number_of_rows = 7
+    number_of_rows = 5
     number_of_cols = 2
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
-        custom.Button.inline("{} {} {}".format("⚔️", x, "⚔️"), data="ub_modul_{}".format(x))
+        custom.Button.inline("{} {}".format("🔹", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
@@ -362,7 +362,7 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
-                await event.reply("I'm [oub-remix](https://github.com/RoyalBoy69/oub-remix) modules helper...\nplease make your own bot, don't use mine 😋")
+                await event.reply("I'm [oub-remix](https://github.com/sahyam2019/oub-remix) modules helper...\nplease make your own bot, don't use mine 😋")
             else:
                 await event.reply(f"`Hey there {ALIVE_NAME}\n\nI work for you :)`")
 
@@ -388,50 +388,6 @@ with bot:
                     text="List of Modules",
                     buttons=[],
                     link_preview=True)
-
-            elif event.query.user_id == uid and query.startswith("Inline buttons"):
-                markdown_note = query[14:]
-                prev = 0
-                note_data = ""
-                buttons = []
-                btn_url_regex = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
-                for match in btn_url_regex.finditer(markdown_note):
-                    # Check if btnurl is escaped
-                    n_escapes = 0
-                    to_check = match.start(1) - 1
-                    while to_check > 0 and markdown_note[to_check] == "\\":
-                        n_escapes += 1
-                        to_check -= 1
-                    # if even, not escaped -> create button
-                    if n_escapes % 2 == 0:
-                        # create a thruple with button label, url, and newline
-                        # status
-                        buttons.append(
-                            (match.group(2), match.group(3), bool(match.group(4)))
-                        )
-                        note_data += markdown_note[prev : match.start(1)]
-                        prev = match.end(1)
-                    # if odd, escaped -> move along
-                    else:
-                        note_data += markdown_note[prev:to_check]
-                        prev = match.start(1) - 1
-                else:
-                    note_data += markdown_note[prev:]
-                message_text = note_data.strip()
-                keyb = []
-                for btn in buttons:
-                    if btn[2] and keyb:
-                        keyb[-1].append(Button.url(btn[0], btn[1]))
-                    else:
-                        keyb.append([Button.url(btn[0], btn[1])])
-                tl_ib_buttons = keyb
-
-                result = builder.article(
-                    title="Inline creator",
-                    text=message_text,
-                    buttons=tl_ib_buttons,
-                    link_preview=False,
-                )
             else:
                 result = builder.article(
                     "oubremix",
@@ -448,8 +404,7 @@ with bot:
                     link_preview=False,
                 )
             await event.answer([result] if result else None)
-            
-          
+
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
@@ -464,7 +419,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = "Abe kiu dusre ka  bot use kr rha khud ka bana pta nhi kha se ata h kaise log h chal futt ab"
+                reply_pop_up_alert = "Please make for yourself, don't use my bot!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -482,7 +437,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = "Abe kiu dusre ka  bot use kr rha khud ka bana pta nhi kha se ata h kaise log h chal futt ab"
+                reply_pop_up_alert = "Please make for yourself, don't use my bot!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -513,11 +468,10 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert = "Abe khud ka bot bana mera use karne ki aukat nhi h teri chal ja ab"
+                reply_pop_up_alert = "Please make for yourself, don't use my bot!"
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-              
     except BaseException:
         LOGS.info(
             "Support for inline is disabled on your bot. "
