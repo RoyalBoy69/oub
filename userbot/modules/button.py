@@ -81,7 +81,7 @@ async def ibutton(event):
         return
     catinput = "Inline buttons " + catinput
     tgbotusername = BOT_USERNAME
-    results = await bot.inline_query(tgbotusername, "@userbutt")
+    results = await bot.cilent.inline_query(tgbotusername, "@userbutt")
     await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
     await event.delete()
 
