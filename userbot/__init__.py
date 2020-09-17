@@ -468,7 +468,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert = "Please make for yourself, don't use my bot!"
+                reply_pop_up_alert = "Abe khud ka bot bana mera use karne ki aukat nhi h teri chal ja ab"
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
