@@ -19,7 +19,7 @@ from pymongo import MongoClient
 from redis import StrictRedis
 from dotenv import load_dotenv
 from requests import get
-from telethon.sync import TelegramClient, custom, events
+from telethon.sync import TelegramClient, custom, events, Button
 from telethon.sessions import StringSession
 
 load_dotenv("config.env")
@@ -394,8 +394,8 @@ with bot:
                 prev = 0
                 note_data = ""
                 buttons = []
-                BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
-                for match in BTN_URL_REGEX.finditer(markdown_note):
+                btn_url_regex = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
+                for match in btn_url_regex.finditer(markdown_note):
                     # Check if btnurl is escaped
                     n_escapes = 0
                     to_check = match.start(1) - 1
@@ -421,9 +421,9 @@ with bot:
                 keyb = []
                 for btn in buttons:
                     if btn[2] and keyb:
-                        keyb[-1].append(custom.Button.url(btn[0], btn[1]))
+                        keyb[-1].append(Button.url(btn[0], btn[1]))
                     else:
-                        keyb.append([custom.Button.url(btn[0], btn[1])])
+                        keyb.append([Button.url(btn[0], btn[1])])
                 tl_ib_buttons = keyb
 
                 result = builder.article(
