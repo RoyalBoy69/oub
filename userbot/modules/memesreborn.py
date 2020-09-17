@@ -6,18 +6,14 @@
 #custom cmds by @Nitesh_231 for personal use 👀
 
 """ Userbot module for having some fun with people. """
-import requests
-import sys
-import os
-import io
-import html
-import asyncio
-import random
+import html, random, asyncio, logging, os
+from PIL import Image, ImageColor
 from random import choice
 from re import sub
+from telethon import events
 from userbot import CMD_HELP
 from userbot.events import register
-
+from userbot import bot
 # ================= CONSTANT =================
 
 RAPE_STRINGS = [
