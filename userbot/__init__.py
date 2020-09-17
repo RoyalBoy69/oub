@@ -394,6 +394,7 @@ with bot:
                 prev = 0
                 note_data = ""
                 buttons = []
+                BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
                 for match in BTN_URL_REGEX.finditer(markdown_note):
                     # Check if btnurl is escaped
                     n_escapes = 0
@@ -509,6 +510,16 @@ with bot:
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
+        def ibuild_keyboard(buttons):
+            keyb = []
+            for btn in buttons:
+                if btn[2] and keyb:
+                    keyb[-1].append(Button.url(btn[0], btn[1]))
+                else:
+                    keyb.append([Button.url(btn[0], btn[1])])
+            return keyb
+
+        
     except BaseException:
         LOGS.info(
             "Support for inline is disabled on your bot. "
@@ -522,13 +533,3 @@ with bot:
             "valid entity. Check your environment variables/config.env file."
         )
         quit(1)
-        
-
-def ibuild_keyboard(buttons):
-    keyb = []
-    for btn in buttons:
-        if btn[2] and keyb:
-            keyb[-1].append(Button.url(btn[0], btn[1]))
-        else:
-            keyb.append([Button.url(btn[0], btn[1])])
-    return keyb
