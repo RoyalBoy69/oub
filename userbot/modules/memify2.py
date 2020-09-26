@@ -165,3 +165,18 @@ async def draw_meme_text(image_path, text):
     webp_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, image_name)
     img.save(webp_file, "WebP")
     return webp_file
+
+CMD_HELP.update({
+    "deleted":
+    "`.invert`\
+    \nUsage:Inverts the colors in media file\
+    \n\n`.solarize`\
+    \nUsage:Watch sun buring ur media file\
+    \n\n`.zoom` or `.zoom range`\
+    \nUsage:Zooms your media file\
+    \n\n`.frame` or `.frame range` or `.frame range ; fill`\
+    \nUsage:Make a frame for your media file\
+    \nFill: This defines the pixel fill value or color value to be applied.\nThe default value is 0 which means the color is black.\
+    \n\n`.mms/.mmss toptext ; bottomtext`\
+    \nUsage:mmf creates a image meme with give text at specific locations and sends.\nmms &mmss Creates a sticker meme with give text at specific locations and sends."
+    })
