@@ -8,6 +8,8 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 from userbot.utils.tools import is_admin
 from userbot.events import register
+from userbot import bot
+
 
 @register(outgoing=True, pattern="^.wh(?: |$)(.*)")
 async def who(event):
