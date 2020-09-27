@@ -7,7 +7,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 from userbot.utils.tools import is_admin
-
+from userbot.events import register
 
 @register(outgoing=True, pattern="^.wh(?: |$)(.*)")
 async def who(event):
