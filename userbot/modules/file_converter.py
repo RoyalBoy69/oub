@@ -1,7 +1,7 @@
 """File Converter
 .nfc """
 
-from userbot import bot, TEMP_DOWNLOAD_DIRECTORY
+from userbot import bot
 import asyncio
 import os
 import time
@@ -9,6 +9,7 @@ from datetime import datetime
 from userbot.utils.tools import is_admin
 from userbot.events import register
 from userbot.utils import progress
+from userbot import TEMP_DOWNLOAD_DIRECTORY
 
 @register(outgoing=True, pattern="^.nfc(?: |$)(.*)")  # pylint:disable=E0602
 async def _(event):
