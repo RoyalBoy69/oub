@@ -5,7 +5,8 @@
  
 import asyncio
 from os import remove
-from userbot import BOTLOG, BOTLOG_CHATID, TERM_ALIAS
+from sys import executable
+from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, TERM_ALIAS
 from userbot.events import register
  
 @register(outgoing=True, pattern="^.w3m(?: |$)(.*)")
@@ -64,4 +65,7 @@ async def terminal_runner(w3m):
             BOTLOG_CHATID,
             "w3m with URL " + command + " was executed sucessfully",
         )
-      
+ 
+CMD_HELP.update(
+    {"w3m": ".w3m google.com\nUsage: Browse the internet with w3m on your server.\nPut your device into landscape mode for better preview."})
+ 
