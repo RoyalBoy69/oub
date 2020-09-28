@@ -1,7 +1,7 @@
 """File Converter
 .nfc """
 
-from userbot import bot, TMP_DOWNLOAD_DIRECTORY
+from userbot import bot, TEMP_DOWNLOAD_DIRECTORY,
 import asyncio
 import os
 import time
