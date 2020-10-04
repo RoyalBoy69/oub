@@ -193,64 +193,6 @@ async def kang(args):
                         "`Failed to add sticker, use` @Stickers `bot to add the sticker manually.`"
                     )
                     return
-<<<<<<< HEAD
-
-            # Upload the sticker file
-            if is_anim:
-                upload = await message.client.upload_file(sticker, file_name="AnimatedSticker.tgs")
-                await conv.send_file(upload, force_document=True)
-            else:
-                sticker.seek(0)
-                await conv.send_file(sticker, force_document=True)
-            await conv.get_response()
-
-            # Send the emoji
-            await conv.send_message(emoji)
-            await conv.get_response()
-
-            # Finish editing the pack
-            await conv.send_message('/done')
-            await conv.get_response()
-
-    # Read all unread messages
-    await bot.send_read_acknowledge('t.me/Stickers')
-    # Unmute Stickers bot back
-    muted = await bot(UpdateNotifySettingsRequest(
-        peer='t.me/Stickers',
-        settings=InputPeerNotifySettings(mute_until=None))
-    )
-
-    await event.edit(
-        f"`Sticker added to pack {number}{'(animated)' if is_anim else ''} with "
-        f"{emoji} as the emoji! "
-        f"This pack can be found `[here](t.me/addstickers/{packname})",
-        parse_mode='md')
-    await asyncio.sleep(7.5)
-    await event.delete()    
-
-                             
-async def newpack(is_anim, sticker, emoji, packtitle, packname):
-    async with bot.conversation('Stickers') as conv:
-        # Cancel any pending command
-        await conv.send_message('/cancel')
-        await conv.get_response()
-
-        # Send new pack command
-        if is_anim:
-            await conv.send_message('/newanimated')
-        else:
-            await conv.send_message('/newpack')
-        await conv.get_response()
-
-        # Give the pack a name
-        await conv.send_message(packtitle)
-        await conv.get_response()
-
-        # Upload sticker file
-        if is_anim:
-            upload = await bot.upload_file(sticker, file_name="AnimatedSticker.tgs")
-            await conv.send_file(upload, force_document=True)
-=======
                 await conv.send_message(emoji)
                 # Ensure user doesn't get spamming notifications
                 await bot.send_read_acknowledge(conv.chat_id)
@@ -259,7 +201,6 @@ async def newpack(is_anim, sticker, emoji, packtitle, packname):
                 await conv.get_response()
                 # Ensure user doesn't get spamming notifications
                 await bot.send_read_acknowledge(conv.chat_id)
->>>>>>> b9819326d7c4b152df8d8d24e63eff1f9a3b4879
         else:
             await args.edit("`Brewing a new Pack...`")
             async with bot.conversation("Stickers") as conv:
