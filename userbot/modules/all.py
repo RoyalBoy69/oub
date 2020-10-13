@@ -18,7 +18,7 @@ from cowpy import cow
 from userbot import CMD_HELP, bot
 from userbot.events import register
 from userbot.modules.admin import get_user_from_event
-from telethon.tl.types import ChannelParticipant
+
 
 @register(outgoing=True, pattern="^.all$")
 async def all(event):
@@ -27,7 +27,7 @@ async def all(event):
     await event.delete()
     mentions = "@all"
     chat = await event.get_input_chat()
-    async for x in bot.iter_participants(chat, filter=ChannelParticipant):
+    async for x in bot.iter_participants(chat):
         mentions += f"[\u2063](tg://user?id={x.id})"
     await bot.send_message(chat, mentions, reply_to=event.message.reply_to_msg_id)
 
