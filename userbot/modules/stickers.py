@@ -121,6 +121,7 @@ async def kang(event):
 
                 await conv.send_message(packname)
                 x = await conv.get_response()
+<<<<<<< HEAD
                 if x.text == "Invalid pack selected.":  # That pack doesn't exist
                     await newpack(is_anim, sticker, emoji, packtitle, packname)
 
@@ -130,6 +131,73 @@ async def kang(event):
                     muted = await bot(UpdateNotifySettingsRequest(
                         peer='t.me/Stickers',
                         settings=InputPeerNotifySettings(mute_until=None))
+=======
+                while "120" in x.text:
+                    pack += 1
+                    packname = f"a{user.id}_by_{user.username}_{pack}"
+                    packnick = f"@{user.username}'s remix pack Vol.{pack}"
+                    await args.edit(
+                        "`Switching to Pack "
+                        + str(pack)
+                        + " due to insufficient space`"
+                    )
+                    await conv.send_message(packname)
+                    x = await conv.get_response()
+                    if x.text == "Invalid pack selected.":
+                        await conv.send_message(cmd)
+                        await conv.get_response()
+                        # Ensure user doesn't get spamming notifications
+                        await bot.send_read_acknowledge(conv.chat_id)
+                        await conv.send_message(packnick)
+                        await conv.get_response()
+                        # Ensure user doesn't get spamming notifications
+                        await bot.send_read_acknowledge(conv.chat_id)
+                        if is_anim:
+                            await conv.send_file("AnimatedSticker.tgs")
+                            remove("AnimatedSticker.tgs")
+                        else:
+                            file.seek(0)
+                            await conv.send_file(file, force_document=True)
+                        await conv.get_response()
+                        await conv.send_message(emoji)
+                        # Ensure user doesn't get spamming notifications
+                        await bot.send_read_acknowledge(conv.chat_id)
+                        await conv.get_response()
+                        await conv.send_message("/publish")
+                        if is_anim:
+                            await conv.get_response()
+                            await conv.send_message(f"<{packnick}>")
+                        # Ensure user doesn't get spamming notifications
+                        await conv.get_response()
+                        await bot.send_read_acknowledge(conv.chat_id)
+                        await conv.send_message("/skip")
+                        # Ensure user doesn't get spamming notifications
+                        await bot.send_read_acknowledge(conv.chat_id)
+                        await conv.get_response()
+                        await conv.send_message(packname)
+                        # Ensure user doesn't get spamming notifications
+                        await bot.send_read_acknowledge(conv.chat_id)
+                        await conv.get_response()
+                        # Ensure user doesn't get spamming notifications
+                        await bot.send_read_acknowledge(conv.chat_id)
+                        await args.edit(
+                            f"`Sticker added in a Different Pack !\
+                            \nThis Pack is Newly created!`\
+                            \nYour pack can be found [here](t.me/addstickers/{packname})",
+                            parse_mode="md",
+                        )
+                        return
+                if is_anim:
+                    await conv.send_file("AnimatedSticker.tgs")
+                    remove("AnimatedSticker.tgs")
+                else:
+                    file.seek(0)
+                    await conv.send_file(file, force_document=True)
+                rsp = await conv.get_response()
+                if "Sorry, the file type is invalid." in rsp.text:
+                    await args.edit(
+                        "`Failed to add sticker, use` @Stickers `bot to add the sticker manually.`"
+>>>>>>> db1d41c7712b9c22eeb0db77c47050a1cce41a23
                     )
 
                     await event.edit(
