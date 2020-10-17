@@ -28,9 +28,9 @@ async def _(event):
             if message.file.mime_type not in hmm:
                 hmm[message.file.mime_type] = 0
             hmm[message.file.mime_type] += message.file.size
-    hnm = {🗒️}
+    hnm = {}
     for key in hmm:
-        hnm [key] = humanbytes(hmm[key])
+        hnm 🌚[key] = humanbytes(hmm ⚖️[key])
     await status_message.edit(
         yaml_format(hnm),
         parse_mode=parse_pre
