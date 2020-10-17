@@ -24,19 +24,11 @@ from telethon import errors
 from telethon.tl import types
 from telethon.utils import get_display_name
 from telethon import events
+from telethon.tl.tlobject import TLObject
 from telethon.tl.functions.messages import GetPeerDialogsRequest
 from telethon.tl.functions.channels import GetParticipantRequest
-from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator, DocumentAttributeFilename, PollAnswer
-
-from PIL import Image, ImageDraw, ImageFont
-import PIL.ImageOps
-from wand.color import Color
-from wand.drawing import Drawing
-from wand.image import Image as remiximage
-from textwrap import wrap
-
-MARGINS = [50, 150, 250, 350, 450]
-
+from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator, DocumentAttributeFilename, MessageEntityPre
+from telethon.utils import add_surrogate
 
 async def md5(fname: str) -> str:
     hash_md5 = hashlib.md5()
@@ -146,138 +138,75 @@ async def check_media(reply_message):
         return False
     else:
         return data
-
-def get_warp_length(width):
-    return int((20.0 / 1024.0) * (width + 0.0))
-
-
-#memify
-
-async def remix_meme(topString, bottomString, filename, endname):
-    img = Image.open(filename)
-    imageSize = img.size
-    # find biggest font size that works
-    fontSize = int(imageSize[1] / 5)
-    font = ImageFont.truetype("userbot/utils/styles/MutantAcademyStyle.ttf", fontSize)
-    topTextSize = font.getsize(topString)
-    bottomTextSize = font.getsize(bottomString)
-    while topTextSize[0] > imageSize[0] - 20 or bottomTextSize[0] > imageSize[0] - 20:
-        fontSize = fontSize - 1
-        font = ImageFont.truetype("userbot/utils/styles/MutantAcademyStyle.ttf", fontSize)
-        topTextSize = font.getsize(topString)
-        bottomTextSize = font.getsize(bottomString)
-
-    # find top centered position for top text
-    topTextPositionX = (imageSize[0] / 2) - (topTextSize[0] / 2)
-    topTextPositionY = 0
-    topTextPosition = (topTextPositionX, topTextPositionY)
-
-    # find bottom centered position for bottom text
-    bottomTextPositionX = (imageSize[0] / 2) - (bottomTextSize[0] / 2)
-    bottomTextPositionY = imageSize[1] - bottomTextSize[1]
-    bottomTextPosition = (bottomTextPositionX, bottomTextPositionY)
-    draw = ImageDraw.Draw(img)
-    # draw outlines
-    # there may be a better way
-    outlineRange = int(fontSize / 15)
-    for x in range(-outlineRange, outlineRange + 1):
-        for y in range(-outlineRange, outlineRange + 1):
-            draw.text(
-                (topTextPosition[0] + x, topTextPosition[1] + y),
-                topString,
-                (0, 0, 0),
-                font=font,
-            )
-            draw.text(
-                (bottomTextPosition[0] + x, bottomTextPosition[1] + y),
-                bottomString,
-                (0, 0, 0),
-                font=font,
-            )
-    draw.text(topTextPosition, topString, (255, 255, 255), font=font)
-    draw.text(bottomTextPosition, bottomString, (255, 255, 255), font=font)
-    img.save(endname)
-
-
-async def remix_meeme(upper_text, lower_text, picture_name, endname):
-    main_image = remiximage(filename=picture_name)
-    main_image.resize(
-        1024, int(((main_image.height * 1.0) / (main_image.width * 1.0)) * 1024.0)
+def parse_pre(text):
+    text = text.strip()
+    return (
+        text,
+        [MessageEntityPre(offset=0, length=len(add_surrogate(text)), language='')]
     )
-    upper_text = "\n".join(wrap(upper_text, get_warp_length(main_image.width))).upper()
-    lower_text = "\n".join(wrap(lower_text, get_warp_length(main_image.width))).upper()
-    lower_margin = MARGINS[lower_text.count("\n")]
-    text_draw = Drawing()
-    text_draw.font = join(getcwd(), "userbot/utils/styles/MutantAcademyStyle.ttf")
-    text_draw.font_size = 100
-    text_draw.text_alignment = "center"
-    text_draw.stroke_color = Color("black")
-    text_draw.stroke_width = 3
-    text_draw.fill_color = Color("white")
-    if upper_text:
-        text_draw.text((main_image.width) // 2, 80, upper_text)
-    if lower_text:
-        text_draw.text(
-            (main_image.width) // 2, main_image.height - lower_margin, lower_text
-        )
-    text_draw(main_image)
-    main_image.save(filename=endname)
 
 
-def convert_toimage(image):
-    img = Image.open(image)
-    if img.mode != "RGB":
-        img = img.convert("RGB")
-    img.save("temp.jpg", "jpeg")
-    os.remove(image)
-    return "temp.jpg"
+def yaml_format(obj, indent=0, max_str_len=256, max_byte_len=64):
+    """
+    Pretty formats the given object as a YAML string which is returned.
+    (based on TLObject.pretty_format)
+    """
+    result = []
+    if isinstance(obj, TLObject):
+        obj = obj.to_dict()
 
-async def invert_colors(imagefile, endname):
-    image = Image.open(imagefile)
-    inverted_image = PIL.ImageOps.invert(image)
-    inverted_image.save(endname)
+    if isinstance(obj, dict):
+        if not obj:
+            return 'dict:'
+        items = obj.items()
+        has_items = len(items) > 1
+        has_multiple_items = len(items) > 2
+        result.append(obj.get('_', 'dict') + (':' if has_items else ''))
+        if has_multiple_items:
+            result.append('\n')
+            indent += 2
+        for k, v in items:
+            if k == '_' or v is None:
+                continue
+            formatted = yaml_format(v, indent)
+            if not formatted.strip():
+                continue
+            result.append(' ' * (indent if has_multiple_items else 1))
+            result.append(f'{k}:')
+            if not formatted[0].isspace():
+                result.append(' ')
+            result.append(f'{formatted}')
+            result.append('\n')
+        if has_items:
+            result.pop()
+        if has_multiple_items:
+            indent -= 2
+    elif isinstance(obj, str):
+        # truncate long strings and display elipsis
+        result = repr(obj[:max_str_len])
+        if len(obj) > max_str_len:
+            result += '…'
+        return result
+    elif isinstance(obj, bytes):
+        # repr() bytes if it's printable, hex like "FF EE BB" otherwise
+        if all(0x20 <= c < 0x7f for c in obj):
+            return repr(obj)
+        else:
+            return ('<…>' if len(obj) > max_byte_len else
+                    ' '.join(f'{b:02X}' for b in obj))
+    elif isinstance(obj, datetime.datetime):
+        # ISO-8601 without timezone offset (telethon dates are always UTC)
+        return obj.strftime('%Y-%m-%d %H:%M:%S')
+    elif hasattr(obj, '__iter__'):
+        # display iterables one after another at the base indentation level
+        result.append('\n')
+        indent += 2
+        for x in obj:
+            result.append(f"{' ' * indent}- {yaml_format(x, indent + 2)}")
+            result.append('\n')
+        result.pop()
+        indent -= 2
+    else:
+        return repr(obj)
 
-
-async def flip_image(imagefile, endname):
-    image = Image.open(imagefile)
-    inverted_image = PIL.ImageOps.flip(image)
-    inverted_image.save(endname)
-
-
-async def grayscale(imagefile, endname):
-    image = Image.open(imagefile)
-    inverted_image = PIL.ImageOps.grayscale(image)
-    inverted_image.save(endname)
-
-
-async def mirror_file(imagefile, endname):
-    image = Image.open(imagefile)
-    inverted_image = PIL.ImageOps.mirror(image)
-    inverted_image.save(endname)
-
-
-async def solarize(imagefile, endname):
-    image = Image.open(imagefile)
-    inverted_image = PIL.ImageOps.solarize(image, threshold=128)
-    inverted_image.save(endname)
-
-
-async def add_frame(imagefile, endname, x, color):
-    image = Image.open(imagefile)
-    inverted_image = PIL.ImageOps.expand(image, border=x, fill=color)
-    inverted_image.save(endname)
-
-
-async def crop(imagefile, endname, x):
-    image = Image.open(imagefile)
-    inverted_image = PIL.ImageOps.crop(image, border=x)
-    inverted_image.save(endname)
-
-#polls
-def Build_Poll(options):
-    i = 0
-    poll = []
-    for option in options:
-        i = i + 1
-        poll.append(PollAnswer(option, bytes(i)))
-    return poll
+    return ''.join(result)
