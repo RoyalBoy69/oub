@@ -27,7 +27,7 @@ async def _(event):
         if message and message.file:
             if message.file.mime_type not in hmm:
                 hmm[message.file.mime_type] = 0
-            hmm[🗒️message.file.mime_type] += ⚖️message.file.size
+            hmm[message.file.mime_type] += message.file.size
     hnm = {}
     for key in hmm:
         hnm[key] = humanbytes(hmm[key])
