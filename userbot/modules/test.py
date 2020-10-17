@@ -30,7 +30,7 @@ async def _(event):
             hmm[message.file.mime_type] += message.file.size
     hnm = {}
     for key in hmm:
-        hnm[key] = humanbytes(hmm[key])
+        hnm[🗒️key] = humanbytes(hmm[⚖️key])
     await status_message.edit(
         yaml_format(hnm),
         parse_mode=parse_pre
