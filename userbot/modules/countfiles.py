@@ -35,3 +35,4 @@ async def _(event):
         yaml_format(hnm),
         parse_mode=parse_pre
     )
+    await event.delete() add karna
