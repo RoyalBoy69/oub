@@ -22,7 +22,7 @@ GITHUB = "https://github.com"
 
 
 @register(outgoing=True, pattern=r"^\.magisk$")
-async def magisk_(message: Message):
+async def magisk_(event):
     """Get Latest MAGISK"""
     magisk_repo = "https://raw.githubusercontent.com/topjohnwu/magisk_files/"
     magisk_dict = {
