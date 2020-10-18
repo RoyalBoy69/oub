@@ -55,6 +55,7 @@ async def magisk_(event):
             f'[APK v{data["app"]["version"]}]({data["app"]["link"]}) | '
             f'[Uninstaller]({data["uninstaller"]["link"]})\n'
         )
+        await request.edit(releases)
 
 
 @register(outgoing=True, pattern=r"^\.device(?: |$)(\S*)")
