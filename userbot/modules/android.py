@@ -56,7 +56,7 @@ async def magisk_(event):
             f'[Uninstaller]({data["uninstaller"]["link"]})\n'
         )
 
-    await message.edit(releases, disable_web_page_preview=True)
+    await event.edit(releases, disable_web_page_preview=True)
 
 
 @register(outgoing=True, pattern=r"^\.device(?: |$)(\S*)")
