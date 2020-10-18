@@ -34,7 +34,4 @@ async def _(event):
         yaml_format(hnm),
         parse_mode=parse_pre
     )
-<<<<<<< HEAD
-=======
     await event.delete()
->>>>>>> a7803c3580885e149de1f89aabbd823a18d41b90
