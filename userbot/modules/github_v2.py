@@ -5,7 +5,7 @@ from userbot.events import register
 
 @register(pattern=r".github (.*)", outgoing=True)
 async def fetch_github_info(event):
-    replied = event.reply_to_event
+    replied = event.reply_to_message
     username = event.filtered_input_str
     if replied:
         username = replied.text
