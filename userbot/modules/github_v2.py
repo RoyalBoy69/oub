@@ -3,7 +3,7 @@ import aiohttp
 from userbot.events import register
 
 
-@register(pattern=r".git (.*)", outgoing=True)
+@register(pattern=r".github (.*)", outgoing=True)
 async def fetch_github_info(event):
     replied = event.reply_to_event
     username = event.filtered_input_str
