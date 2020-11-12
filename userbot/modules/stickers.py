@@ -8,7 +8,13 @@
 import io
 import math
 import urllib.request
+<<<<<<< HEAD
 import asyncio
+=======
+from os import remove
+import requests
+from bs4 import BeautifulSoup as bs
+>>>>>>> 4a89421521ed99f8ac477e9961b5196f4711a2da
 from PIL import Image
 from telethon.tl.types import InputPeerNotifySettings, DocumentAttributeSticker, InputStickerSetID
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
@@ -16,9 +22,19 @@ from userbot import bot, CMD_HELP
 from userbot.events import register
 from telethon.tl.functions.messages import GetStickerSetRequest
 
+<<<<<<< HEAD
 PACK_FULL = "Whoa! That's probably enough stickers for one pack, give it a break. \
 A pack can't have more than 120 stickers at the moment."
 PACK_DOESNT_EXIST = "  A <strong>Telegram</strong> user has created the <strong>Sticker&nbsp;Set</strong>."
+=======
+combot_stickers_url = "https://combot.org/telegram/stickers?q="
+
+KANGING_STR = [
+    "Stealing this sticker...",
+    "Plagiarising hehe...",
+    "Inviting this sticker over to my pack...",
+    "Kanging this sticker...",]
+>>>>>>> 4a89421521ed99f8ac477e9961b5196f4711a2da
 
 
 @register(outgoing=True, pattern="^.kang($| )?((?![0-9]).+?)? ?([0-9]*)?")
@@ -186,6 +202,7 @@ async def newpack(is_anim, sticker, emoji, packtitle, packname):
             await conv.send_message('/newpack')
         await conv.get_response()
 
+<<<<<<< HEAD
         # Give the pack a name
         await conv.send_message(packtitle)
         await conv.get_response()
@@ -217,6 +234,15 @@ async def newpack(is_anim, sticker, emoji, packtitle, packname):
         # Send packname
         await conv.send_message(packname)
         await conv.get_response()
+=======
+        await args.edit(
+            f"`Sticker kanged successfully!`\
+            \nPack can be found [here](t.me/addstickers/{packname})",
+            parse_mode="md",
+        )
+        await asyncio.sleep(7.5)
+        await args.delete()
+>>>>>>> 4a89421521ed99f8ac477e9961b5196f4711a2da
 
 
 async def resize_photo(photo):
@@ -286,6 +312,27 @@ async def get_pack_info(event):
 
     await event.edit(OUTPUT)
 
+@register(outgoing=True, pattern=r"^\.stickers ?(.*)")
+async def cb_sticker(event):
+    split = event.pattern_match.group(1)
+    if not split:
+        await event.edit("`Provide some name to search for pack.`")
+        return
+    await event.edit("`Searching sticker packs`")
+    text = requests.get(combot_stickers_url + split).text
+    soup = bs(text, "lxml")
+    results = soup.find_all("div", {'class': "sticker-pack__header"})
+    if not results:
+        await event.edit("`No results found :(.`")
+        return
+    reply = f"**Sticker packs found for {split} are :**"
+    for pack in results:
+        if pack.button:
+            packtitle = (pack.find("div", "sticker-pack__title")).get_text()
+            packlink = (pack.a).get('href')
+            packid = (pack.button).get('data-popup')
+            reply += f"\n **• ID: **`{packid}`\n [{packtitle}]({packlink})"
+    await event.edit(reply)
 
 @register(outgoing=True, pattern="^.getsticker$")
 async def sticker_to_png(sticker):
@@ -331,5 +378,7 @@ CMD_HELP.update({
 \n\n`.getsticker`\
 \nUsage:reply to a sticker to get 'PNG' file of sticker.\
 \n\n`.cs <text>`\
-\nUsage: Type .cs text and generate rgb sticker."
+\nUsage: Type .cs text and generate rgb sticker.\
+\n\n`.stickers` <name of user or pack>\
+\nUsage: Fetch sticker Packs according to your query."
 })
