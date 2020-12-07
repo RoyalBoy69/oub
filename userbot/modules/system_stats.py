@@ -229,7 +229,7 @@ async def amireallyalive(alive):
               f"Bot Version: Remix {BOT_VER} \n"
               f"Bot Uptime 🕒: {uptime} \n"
               " \n"
-              f"Owner: [ℜøℽⱥl ẞøℽ ꧁やℜiℽⱥήshu꧂](t.me/RoyalBoyPriyanshu)\n"
+              f"Owner: {DEFAULTUSER} \n"
               " \n"
               f"ℜøℽⱥl'z Bot: E.D.I.T.H. \n"
               f"Even Dead, I'm The Hero! 😎 "
